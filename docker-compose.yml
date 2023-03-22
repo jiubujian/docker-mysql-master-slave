@@ -12,7 +12,7 @@ services:
       - ./master/conf/mysql.conf.cnf:/etc/mysql/conf.d/mysql.conf.cnf
       - ./master/data:/var/lib/mysql
     networks:
-      - overlay
+      - mysql5.7-network
 
   mysql_slave:
     image: mysql:5.7
@@ -28,8 +28,8 @@ services:
       - ./slave/conf/mysql.conf.cnf:/etc/mysql/conf.d/mysql.conf.cnf
       - ./slave/data:/var/lib/mysql
     networks:
-      - overlay
+      - mysql5.7-network
 
 networks:
-  overlay:
+  mysql5.7-network:
 
